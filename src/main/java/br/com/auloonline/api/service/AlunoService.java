@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AlunoService {
 
-    @Autowired
+    @Autowired // faz a injeção de dados ou informações
     AlunoRepository alunoRepository;
 
 
     public void criarAluno(Aluno aluno) {
          alunoRepository.save(aluno);
     }
+
 }
