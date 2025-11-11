@@ -28,6 +28,23 @@ AlunoExistente insomnia:
 AlunoNaoExistente insomnia:
 <img width="1920" height="1152" alt="print-buscarPorIdNaoExistente" src="https://github.com/user-attachments/assets/cc61c8c3-5d4f-4510-bf89-1f3358ee2725" />
 
+Adicionando o professor agora:
+
+criando professor: 
+<img width="1359" height="704" alt="criando professor" src="https://github.com/user-attachments/assets/59fb3290-c255-480f-ad55-a4ed79eafaa5" />
+
+buscando professor por id:
+<img width="1362" height="718" alt="mostrando professor por id" src="https://github.com/user-attachments/assets/ea4c7bd4-6719-47ca-b50c-c71b0f7183ac" />
+
+Deletando professor:
+<img width="1359" height="721" alt="deletetando professor" src="https://github.com/user-attachments/assets/950ad587-df5b-42ef-a954-bc110a66cc6d" />
+
+atualizando um novo professor:
+<img width="1359" height="712" alt="alteradadosdoprofessor" src="https://github.com/user-attachments/assets/cc89148a-2047-4c3f-8f55-b85859d0d186" />
+
+
+
+
 
 
 
