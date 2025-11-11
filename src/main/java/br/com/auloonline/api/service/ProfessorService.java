@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class ProfessorService {
 
-    @Autowired // faz a injeção de dados ou informações
+    @Autowired // faz a injeção de dependencias ou informações
     ProfessorRepository professorRepository;
 
     public void criarProfessor(Professor professor) {
