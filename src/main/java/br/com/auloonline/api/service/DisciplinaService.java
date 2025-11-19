@@ -17,10 +17,10 @@ public class DisciplinaService {
     DisciplinaRepository disciplinaRepository;
 
     public void criarDisciplina(Disciplina disciplina) {
-        DisciplinaRepository.save(disciplina); // Corrigido: minusculo
+        disciplinaRepository.save(disciplina); // Corrigido: minusculo
     }
 
-    public List<Disciplina> buscarTodosDisciplina() {
+    public List<Disciplina> buscarTodasDisciplinas() { // Corrigido nome do método
         return disciplinaRepository.findAll();
     }
 
@@ -28,25 +28,22 @@ public class DisciplinaService {
         return disciplinaRepository.findById(id);
     }
 
-    public void deletarDisciplinaPorId(Long id) { // Corrigido nome do método
-        disciplinaRepository.deleteById(id); // Removido "return"
+    public void deletarDisciplinaPorId(Long id) {
+        disciplinaRepository.deleteById(id);
     }
 
-    public void atualizarDisciplinaPorId(Long id, Disciplina disciplinarAtualizado) {
+    public void atualizarDisciplinaPorId(Long id, Disciplina disciplinaAtualizada) { // Corrigido nome do parâmetro
         Optional<Disciplina> disciplinaDoBancoDeDados = buscarDisciplinaPorId(id);
 
-        if (disciplinaDoBancoDeDados.isEmpty()) { // Corrigido: minusculo
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, // Corrigido: NOT_FOUND
-                    "Disciplina não encontrado no banco de dados");
+        if (disciplinaDoBancoDeDados.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, // Corrigido: adicionada a vírgula faltante
+                    "Disciplina não encontrada no banco de dados"); // Corrigido mensagem
         }
 
         Disciplina disciplinaParaEditar = disciplinaDoBancoDeDados.get();
 
-        disciplinaParaEditar.setNomeCompleto(disciplinaAtualizado.getNomeCompleto());
-        disciplinaParaEditar.setEmail(disciplinaAtualizado.getEmail());
-        disciplinaParaEditar.setCpf(disciplinarAtualizado.getCpf());
+        disciplinaParaEditar.setNome(disciplinaAtualizada.getNome());
 
         disciplinaRepository.save(disciplinaParaEditar);
-    }
     }
 }

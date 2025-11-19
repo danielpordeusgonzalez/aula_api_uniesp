@@ -19,29 +19,30 @@ public class DisciplinaController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void criarDisciplina(@RequestBody Disciplina disciplina) {
-
         disciplinaService.criarDisciplina(disciplina);
+    } // Faltava fechar este método
 
-    @GetMappin
+    @GetMapping // Corrigido o nome da anotação
     @ResponseStatus(HttpStatus.OK)
-    public List<Professor> buscarTodosProfessores() {
-            return professorService.buscarTodosProfessor();
-        }
+    public List<Disciplina> buscarTodasDisciplinas() {
+        return disciplinaService.buscarTodasDisciplinas();
+    }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Professor> buscarProfessorPorId(@PathVariable Long id) {
-        return professorService.buscarProfessorPorId(id);
+    public Optional<Disciplina> buscarDisciplinaPorId(@PathVariable Long id) {
+        return disciplinaService.buscarDisciplinaPorId(id);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletarProfessorPorId(@PathVariable Long id) {
-            professorService.deletarProfessorPorId(id);
-        }
+    public void deletarDisciplinaPorId(@PathVariable Long id) {
+        disciplinaService.deletarDisciplinaPorId(id);
+    }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizarProfessorPorId(@PathVariable Long id, @RequestBody Professor professorAtualizado) {
-        professorService.atualizarProfessorPorId(id, professorAtualizado);
+    public void atualizarDisciplinaPorId(@PathVariable Long id, @RequestBody Disciplina disciplinaAtualizada) { // Corrigido o tipo do parâmetro
+        disciplinaService.atualizarDisciplinaPorId(id, disciplinaAtualizada); // Corrigido o nome do método
     }
+}
